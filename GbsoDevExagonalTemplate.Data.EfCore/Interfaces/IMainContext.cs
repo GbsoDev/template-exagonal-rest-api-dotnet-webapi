@@ -6,6 +6,8 @@ namespace GbsoDevExagonalTemplate.Data.EfCore.Interfaces
 {
 	public interface IMainContext
 	{
+		DbSet<User> Users { get; set; }
+
 		int SaveChanges(bool acceptAllChangesOnSuccess);
 
 		TEntity? Find<TEntity>(params object?[]? keyValues) where TEntity : class;
