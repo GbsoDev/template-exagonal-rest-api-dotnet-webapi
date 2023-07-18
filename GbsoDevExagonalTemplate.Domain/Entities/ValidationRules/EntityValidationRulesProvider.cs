@@ -8,6 +8,7 @@ namespace GbsoDevExagonalTemplate.Domain.EntityValidationRules
 	{
 		public static IServiceCollection AddDomainEntityValidationRules(this IServiceCollection services)
 		{
+			services.AddSingleton<IValidator<User>, UserValidatioRules>();
 			return services;
 		}
 	}
