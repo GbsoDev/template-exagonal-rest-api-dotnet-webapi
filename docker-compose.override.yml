@@ -6,3 +6,18 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
+    depends_on:
+      - exagonal-app-database
+  exagonal-app-database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - MSSQL_SA_PASSWORD=pass@exagonal-app-database93
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
+    volumes:
+      - exagonal-app-dbdata:/var/opt/mssql
+      - ./assets/backup:/deb-backup
+    tty: true
+volumes:
+    exagonal-app-dbdata:
