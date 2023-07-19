@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  gbsodevexagonaltemplate.api:
+    image: ${DOCKER_REGISTRY-}gbsodev/gbsodev-exagonal-template-api:release
+    build:
+      context: .
+      dockerfile: GbsoDevExagonalTemplate.Api/Dockerfile
