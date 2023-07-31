@@ -1,3 +1,4 @@
+﻿using GbsoDevExagonalTemplate.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -6,6 +7,8 @@ namespace GbsoDevExagonalTemplate.Data.EfCore.Interfaces
 {
 	public interface IMainContext
 	{
+		DbSet<User> Users { get; set; }
+
 		DatabaseFacade Database { get; }
 
 		ValueTask<TEntity?> FindAsync<TEntity>(object?[]? keyValues, CancellationToken cancellationToken) where TEntity : class;
