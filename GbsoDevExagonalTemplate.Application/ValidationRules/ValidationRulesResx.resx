@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NameLength" xml:space="preserve">
+    <value>El nombre debe tener de {0} a {1} caracteres</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>La contraseña debe tener una longitud de {0} a {1} caracteres</value>
+  </data>
   <data name="PropertyEmpty" xml:space="preserve">
     <value>La propiedad {0} está vacía</value>
   </data>
@@ -128,5 +134,8 @@
   </data>
   <data name="Update" xml:space="preserve">
     <value>Validation to update </value>
+  </data>
+  <data name="UserNameLength" xml:space="preserve">
+    <value>El nombre de usuario debe tener de {0} a {1} caracteres</value>
   </data>
 </root>

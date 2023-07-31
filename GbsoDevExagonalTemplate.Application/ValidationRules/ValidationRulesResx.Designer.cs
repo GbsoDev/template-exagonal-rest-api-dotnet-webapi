@@ -61,6 +61,24 @@ namespace GbsoDevExagonalTemplate.Application.ValidationRules {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El nombre debe tener de {0} a {1} caracteres.
+        /// </summary>
+        internal static string NameLength {
+            get {
+                return ResourceManager.GetString("NameLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La contraseña debe tener una longitud de {0} a {1} caracteres.
+        /// </summary>
+        internal static string PasswordLength {
+            get {
+                return ResourceManager.GetString("PasswordLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to La propiedad {0} está vacía.
         /// </summary>
         internal static string PropertyEmpty {
@@ -93,6 +111,15 @@ namespace GbsoDevExagonalTemplate.Application.ValidationRules {
         internal static string Update {
             get {
                 return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de usuario debe tener de {0} a {1} caracteres.
+        /// </summary>
+        internal static string UserNameLength {
+            get {
+                return ResourceManager.GetString("UserNameLength", resourceCulture);
             }
         }
     }
