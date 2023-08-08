@@ -2,6 +2,7 @@
 {
 	public class AppSettings
 	{
+		public DbType DbType { get; set; }
 		public Dictionary<string, string> ConnectionStrings { get; set; }
 		public AuthOptions AuthOptions { get; set; }
 		public CorsOptions[] AllowCors { get; set; }

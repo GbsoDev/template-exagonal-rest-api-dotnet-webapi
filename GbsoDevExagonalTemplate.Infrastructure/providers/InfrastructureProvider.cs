@@ -30,7 +30,7 @@ namespace GbsoDevExagonalTemplate.Infrastructure.providers
 
 		public static IApplicationBuilder WebApiPosBuild(this IApplicationBuilder app, IServiceProvider serviceProvider, AppSettings appSettings)
 		{
-			serviceProvider.MigrateDatabase();
+			serviceProvider.MigrateDatabase(appSettings);
 			app.AddPosBuildWebApiCorsPolicies(appSettings);
 			return app;
 		}
