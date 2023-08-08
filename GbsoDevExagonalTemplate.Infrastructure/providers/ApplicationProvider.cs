@@ -8,6 +8,8 @@ namespace GbsoDevExagonalTemplate.Infrastructure.providers
 	{
 		internal static IServiceCollection AddApplicationServices(this IServiceCollection services)
 		{
+			services.AddScoped<IUserService, UserService>()
+				.AddScoped(serviceProvider => new Lazy<IUserService>(() => serviceProvider.GetRequiredService<IUserService>()));
 			return services;
 		}
 	}

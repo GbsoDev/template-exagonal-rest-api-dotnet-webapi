@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GbsoDevExagonalTemplate.Dtos.MapperConfigurations;
 using GbsoDevExagonalTemplate.Infrastructure.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,9 @@ namespace GbsoDevExagonalTemplate.Infrastructure.providers
 
 		internal static IServiceCollection AddMapperConfigurations(this IServiceCollection services)
 		{
+			services.AddSingleton(
+				new MapperConfiguration(mc => mc.AddProfile(typeof(UserMapperConfiguration))).CreateMapper()
+			);
 			return services;
 		}
 
