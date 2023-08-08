@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  template-exagonal-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - template-exagonal-database
+  template-exagonal-database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: template-exagonal-database
+    environment:
+      - MSSQL_SA_PASSWORD=pass@template-exagonal-database93
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
+    volumes:
+      - template-exagonal-dbdata:/var/opt/mssql
+      - ./assets/backup:/deb-backup
+    tty: true
+volumes:
+    template-exagonal-dbdata:

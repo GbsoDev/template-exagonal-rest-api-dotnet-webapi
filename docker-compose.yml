@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  template-exagonal-api:
+    image: ${DOCKER_REGISTRY-}gbsodev/template-exagonal-dotnet-rest-api:release
+    container_name: template-exagonal-api
+    build:
+      context: .
+      dockerfile: GbsoDevExagonalTemplate.Api/Dockerfile
