@@ -11,7 +11,11 @@ namespace GbsoDevExagonalTemplate.Infrastructure.providers
 	{
 		internal static IServiceCollection AddDataEfCoreDbContext(this IServiceCollection services, AppSettings appSettings)
 		{
+#if DEBUG
+			var connectionName = appSettings.Environments.RunningInDocker ? Constants.CONNECTION_DB_NAME : Constants.CONNECTION_DB_NAME_LOCAL;
+#else
 			var connectionName = Constants.CONNECTION_DB_NAME;
+#endif
 			var connectionString = appSettings.GetConnectionString(connectionName) ?? throw new ApplicationException("Conexión a base de datos no encontrada");
 			
 			services.AddDbContext<MainContext>(options => options.UseSqlServer(connectionString));

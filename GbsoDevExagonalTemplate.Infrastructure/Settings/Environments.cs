@@ -2,5 +2,6 @@
 {
 	public class Environments
 	{
+		public bool RunningInDocker { get; set; }
 	}
 }
